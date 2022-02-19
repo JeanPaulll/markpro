@@ -31,17 +31,31 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/tobii.min.css",
+              "src/assets/css/materialdesignicons.min.css",
+              "src/assets/css/tiny-slider.css",
+              "src/assets/css/style.css",
+              "src/assets/css/colors/skyblue.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/bootstrap.bundle.min.js",
+              "src/assets/js/tiny-slider.js",
+              "src/assets/js/tobii.min.js",
+              "src/assets/js/feather.min.js",
+              "src/assets/js/switcher.js",
+              "src/assets/js/plugins.init.js",
+              "src/assets/js/app.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",

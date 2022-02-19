@@ -1,0 +1,8 @@
+<div class="cookie-popup bg-white shadow rounded py-3 px-4" [hidden]="!cookie">
+  <p class="text-muted mb-0">Este site usa cookies para fornecer uma ótima experiência de usuário. Ao usá-lo, você
+    aceita nossos
+    <a href="#" target="_blank" class="text-success h6">uso de cookies</a></p>
+  <div class="cookie-popup-actions text-end">
+    <button><i class="uil uil-times text-dark fs-4" (click)="close($event)"></i></button>
+  </div>
+</div><!--Note: Cookies Js including in plugins.init.js (path like; js/plugins.init.js) and Cookies css including in _helper.scss (path like; scss/_helper.scss)-->
