@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {WhatsappEnum} from "../../partials/whatsapp/whatsapp.enum";
+import {environment} from "../../../../environments/environment";
 
 interface ISolucoes {
   titulo: string,
@@ -15,10 +17,23 @@ export class HomeComponent implements OnInit {
 
   public solucoes: ISolucoes[] = [];
 
+
+  @Input() type: string = WhatsappEnum.HELP;
+  public info = environment.info;
+
+  public SEND_LINK = 'https://api.whatsapp.com/send?phone=';
+  public messageNumber: string = '';
+
+  private get whatsAppNumber(): string {
+    return this.info.whatsapp;
+  }
+
   constructor() {
   }
 
   ngOnInit(): void {
+    this.messageNumber = this.SEND_LINK + this.whatsAppNumber + '&text&type=phone_number&app_absent=0';
+    this.messageNumber = this.messageNumber.replace('+', '%2B');
     this.solucoes = [
       {
         titulo: 'Terceirização de TI',
@@ -54,3 +69,7 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
+
+
+

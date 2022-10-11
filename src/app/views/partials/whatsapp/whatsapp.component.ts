@@ -19,6 +19,7 @@ export class WhatsappComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.messageNumber = this.SEND_LINK + this.whatsAppNumber;
+    this.messageNumber = this.SEND_LINK + this.whatsAppNumber + '&text&type=phone_number&app_absent=0';
+    this.messageNumber = this.messageNumber.replace('+', '%2B');
   }
 }
