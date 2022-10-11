@@ -16,8 +16,6 @@ interface ISolucoes {
 export class HomeComponent implements OnInit {
 
   public solucoes: ISolucoes[] = [];
-
-
   @Input() type: string = WhatsappEnum.HELP;
   public info = environment.info;
 
