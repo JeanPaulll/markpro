@@ -7,12 +7,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {PartialsModule} from "./views/partials/partials.module";
 import { HomeComponent } from './views/pages/home/home.component';
 import { QuemSomosComponent } from './views/pages/quem-somos/quem-somos.component';
+import { ServicosComponent } from './views/pages/servicos/servicos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    QuemSomosComponent
+    QuemSomosComponent,
+    ServicosComponent
   ],
   imports: [
     BrowserAnimationsModule,

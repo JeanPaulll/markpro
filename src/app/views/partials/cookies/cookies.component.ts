@@ -15,10 +15,10 @@ export class CookiesComponent implements OnInit {
     this._cookie = value;
   }
 
-  private _cookie = true;
+  private _cookie = false;
 
   constructor() {
-    this.cookie = true;
+    this.cookie = false;
   }
 
 
