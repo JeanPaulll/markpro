@@ -1,0 +1,38 @@
+on:
+  push:
+    branches: [master]
+name: 🚀 Deploy website on push - Esfera Global -
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build
+
+      - name: 🔨 Listando Arquivos
+        run: |
+          ls
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.SERVE_MARKPRO }}
+          username: ${{ secrets.USERNAME_MARKPRO }}
+          password: ${{ secrets.PASSWORD_MARKPRO }}
+          dangerous-clean-slate: true
+          local-dir: './dist/markpro/'
+          server-dir: public_html/
+          port: 21
+
